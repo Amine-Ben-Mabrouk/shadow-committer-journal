@@ -1,0 +1,2 @@
+the status "unverified" on my github commit was because my Git email was not configured , solution:
+onfig global user.email="amine.ben.mabrouk@gmail.com"
