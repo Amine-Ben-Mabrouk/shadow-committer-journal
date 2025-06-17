@@ -1,0 +1,75 @@
+# 🕶️ SHADOW COMMITTER - PR QUALITY STANDARD v1.0
+
+## 🎯 Objectif
+Assurer que chaque Pull Request réalisée dans le cadre du projet Shadow Committer soit :
+- Pertinente
+- Justifiable techniquement
+- Mergable sans débat
+- Digne d’un ingénieur expert en durcissement Linux et infrastructures critiques
+
+---
+
+## 📏 Règle 1 : 🔎 Validation technique préalable
+
+Avant de proposer une PR :
+- ✅ S’assurer que le **fichier ciblé existe encore** dans la branche par défaut (`main`, `master`, `devel`, etc.)
+- ✅ Vérifier que la **ligne ciblée existe réellement** via :
+  - `grep` ou `rg` local
+  - Recherche GitHub (web ou API)
+- ✅ Vérifier que le dépôt est **actif** et que les mainteneurs acceptent encore les PR
+
+---
+
+## 📎 Règle 2 : 🔗 Contexte & Traçabilité
+
+Chaque PR doit inclure :
+- 📁 Le **chemin complet** du fichier modifié
+- 🔢 Le **numéro de ligne** modifiée (si possible)
+- 🔗 Le **lien direct GitHub vers la ligne/fichier** (`https://github.com/.../blob/main/...#L123`)
+- 🧠 Une **justification technique** du changement
+- 📦 Si doc : justifier la reformulation, clarté, correction grammaticale ou de sens
+- 🔧 Si code : montrer avant/après, effet du patch
+
+---
+
+## 🧪 Règle 3 : Tests & Vérifications
+
+- ✅ Commit **signé GPG**
+- ✅ Branch dédiée (`fix-xxx`, `doc-fix-shadow-001`, etc.)
+- ✅ PR créée via `gh pr create` ou web UI avec titre clair :
+  - Format : `fix(module): message court` ou `docs(module): message court`
+- 🧠 Toujours lancer `git log --show-signature` avant push
+
+---
+
+## ❌ Règle 4 : Interdits absolus
+
+- 🚫 Proposer un patch sur un code **non maintenu**
+- 🚫 Copier une ligne depuis une version datée du dépôt sans revalidation
+- 🚫 Proposer une PR juste pour “dire qu’on a contribué”
+
+---
+
+## 📜 Exemple de message de PR correct
+
+> **Title**: `docs(ssh_hardening): clarify note on root login disabling`  
+> **Body**:
+> Improved clarity of SSH root login warning in the documentation.  
+> Ensures new users don't lock themselves out during hardening.  
+> Verified file existence and line context here:  
+> 🔗 https://github.com/dev-sec/ansible-collection-hardening/blob/main/roles/ssh_hardening/README.md#L32
+
+---
+
+## ✅ Check-list de validation finale (avant push)
+
+- [ ] Fichier encore présent ?
+- [ ] Ligne encore présente ?
+- [ ] Ligne utile/modifiable ?
+- [ ] Lien direct fourni ?
+- [ ] Commit signé ?
+- [ ] PR claire, modeste, utile ?
+
+---
+
+## 🔥 Signature : Shadow Committer Certified 🕶️
